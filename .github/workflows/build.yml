@@ -20,17 +20,11 @@ jobs:
       with:
         gradle-version: 8.5
 
-    - name: Auto Fix AI Studio Signing Bug
-      run: |
-        if [ -f app/build.gradle.kts ]; then
-          sed -i '/getByName("debugConfig")/d' app/build.gradle.kts
-        fi
-
     - name: Build APK
       run: gradle assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: MyFinance-APK
+        name: FinanceTracker-APK
         path: app/build/outputs/apk/debug/app-debug.apk
