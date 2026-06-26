@@ -44,7 +44,7 @@ android {
       signingConfig = signingConfigs.getByName("release")
     }
     debug {
-      signingConfig = signingConfigs.getByName("debugConfig")
+      // GitHub build error ko fix karne ke liye yahan se default debug signing config ko hata diya gaya hai
     }
   }
   compileOptions {
